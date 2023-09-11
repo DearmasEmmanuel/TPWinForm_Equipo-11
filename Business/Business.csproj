@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{210EFF3B-D685-4810-A232-1517E4A033FF}</ProjectGuid>
+    <ProjectGuid>{4AD56C32-F0CB-4720-8B4E-597CFDEDE7B1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Business</RootNamespace>
@@ -47,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj">
-      <Project>{7b4b37db-ebf0-4aae-bce1-e5be736769b9}</Project>
+      <Project>{e777881a-1cd4-4384-89f7-c49e434421eb}</Project>
       <Name>Domain</Name>
     </ProjectReference>
   </ItemGroup>

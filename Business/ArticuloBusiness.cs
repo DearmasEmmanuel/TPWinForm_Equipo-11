@@ -4,9 +4,11 @@ using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using Domain;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Business
 {
