@@ -37,6 +37,14 @@ namespace Data
             this.command.CommandText = query;
         }
 
+        public int GetLastId(string table)
+        {
+            SetQuery($"SELECT MAX(Id) FROM {table}");
+            reader = command.ExecuteReader();
+            reader.Read();
+            return Reader.GetInt32(0);
+        }
+
         public bool ExecuteQuery()
         {
             try

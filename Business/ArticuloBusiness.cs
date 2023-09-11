@@ -23,7 +23,7 @@ namespace Business
 
             try
             {
-                conexion.ConnectionString = "server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true";
+                conexion.ConnectionString = "Server=.; database=CATALOGO_P3_DB; integrated security=true";
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = "SELECT a.Id AS IdArticulo, a.Codigo, a.Nombre, a.Descripcion, m.Id AS IdMarca, m.Descripcion AS Marca, c.Id as IdCategoria, c.Descripcion AS Categoria,i.Id AS IdImagen, i.ImagenUrl AS Imagen, a.Precio FROM ARTICULOS a, MARCAS m, CATEGORIAS c, IMAGENES i WHERE a.IdMarca = m.Id AND a.IdCategoria = c.Id AND a.Id = i.IdArticulo";
                 comando.Connection = conexion;

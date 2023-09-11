@@ -18,3 +18,18 @@ C:\Users\Lucas\Coding\Winforms nuevo\TPWinforms_equipo-11\bin\Debug\Domain.pdb
 C:\Users\Lucas\Coding\Winforms nuevo\TPWinforms_equipo-11\obj\Debug\TPWinforms.csproj.CopyComplete
 C:\Users\Lucas\Coding\Winforms nuevo\TPWinforms_equipo-11\obj\Debug\TPWinforms_equipo-11.exe
 C:\Users\Lucas\Coding\Winforms nuevo\TPWinforms_equipo-11\obj\Debug\TPWinforms_equipo-11.pdb
+C:\Users\Lucas\Coding\TPWinforms parte 2\TPWinforms_equipo-11\bin\Debug\TPWinforms_equipo-11.exe.config
+C:\Users\Lucas\Coding\TPWinforms parte 2\TPWinforms_equipo-11\bin\Debug\TPWinforms_equipo-11.exe
+C:\Users\Lucas\Coding\TPWinforms parte 2\TPWinforms_equipo-11\bin\Debug\TPWinforms_equipo-11.pdb
+C:\Users\Lucas\Coding\TPWinforms parte 2\TPWinforms_equipo-11\bin\Debug\Business.dll
+C:\Users\Lucas\Coding\TPWinforms parte 2\TPWinforms_equipo-11\bin\Debug\Domain.dll
+C:\Users\Lucas\Coding\TPWinforms parte 2\TPWinforms_equipo-11\bin\Debug\Business.pdb
+C:\Users\Lucas\Coding\TPWinforms parte 2\TPWinforms_equipo-11\bin\Debug\Domain.pdb
+C:\Users\Lucas\Coding\TPWinforms parte 2\TPWinforms_equipo-11\obj\Debug\TPWinforms.csproj.AssemblyReference.cache
+C:\Users\Lucas\Coding\TPWinforms parte 2\TPWinforms_equipo-11\obj\Debug\TPWinforms.csproj.SuggestedBindingRedirects.cache
+C:\Users\Lucas\Coding\TPWinforms parte 2\TPWinforms_equipo-11\obj\Debug\TPWinforms_equipo_11.Properties.Resources.resources
+C:\Users\Lucas\Coding\TPWinforms parte 2\TPWinforms_equipo-11\obj\Debug\TPWinforms.csproj.GenerateResource.cache
+C:\Users\Lucas\Coding\TPWinforms parte 2\TPWinforms_equipo-11\obj\Debug\TPWinforms.csproj.CoreCompileInputs.cache
+C:\Users\Lucas\Coding\TPWinforms parte 2\TPWinforms_equipo-11\obj\Debug\TPWinforms.csproj.CopyComplete
+C:\Users\Lucas\Coding\TPWinforms parte 2\TPWinforms_equipo-11\obj\Debug\TPWinforms_equipo-11.exe
+C:\Users\Lucas\Coding\TPWinforms parte 2\TPWinforms_equipo-11\obj\Debug\TPWinforms_equipo-11.pdb

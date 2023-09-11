@@ -7,3 +7,12 @@ C:\Users\Lucas\Coding\Winforms nuevo\Business\obj\Debug\Business.csproj.CoreComp
 C:\Users\Lucas\Coding\Winforms nuevo\Business\obj\Debug\Business.csproj.CopyComplete
 C:\Users\Lucas\Coding\Winforms nuevo\Business\obj\Debug\Business.dll
 C:\Users\Lucas\Coding\Winforms nuevo\Business\obj\Debug\Business.pdb
+C:\Users\Lucas\Coding\TPWinforms parte 2\Business\obj\Debug\Business.csproj.AssemblyReference.cache
+C:\Users\Lucas\Coding\TPWinforms parte 2\Business\obj\Debug\Business.csproj.CoreCompileInputs.cache
+C:\Users\Lucas\Coding\TPWinforms parte 2\Business\obj\Debug\Business.dll
+C:\Users\Lucas\Coding\TPWinforms parte 2\Business\obj\Debug\Business.pdb
+C:\Users\Lucas\Coding\TPWinforms parte 2\Business\bin\Debug\Business.dll
+C:\Users\Lucas\Coding\TPWinforms parte 2\Business\bin\Debug\Business.pdb
+C:\Users\Lucas\Coding\TPWinforms parte 2\Business\bin\Debug\Domain.dll
+C:\Users\Lucas\Coding\TPWinforms parte 2\Business\bin\Debug\Domain.pdb
+C:\Users\Lucas\Coding\TPWinforms parte 2\Business\obj\Debug\Business.csproj.CopyComplete
