@@ -96,10 +96,7 @@
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvArticulo);
             this.Name = "TPWinforms_Catalogo";
-<<<<<<< HEAD
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-=======
->>>>>>> d17c47a1f7ea6b3ea8a9b964f3ef59825395b8f2
             this.Text = "Gestión de Artículos";
             this.Load += new System.EventHandler(this.TPWinforms_Catalogo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulo)).EndInit();
