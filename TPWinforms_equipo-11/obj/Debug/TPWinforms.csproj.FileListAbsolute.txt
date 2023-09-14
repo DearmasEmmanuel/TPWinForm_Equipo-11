@@ -33,3 +33,21 @@ C:\Users\Lucas\Coding\TPWinforms parte 2\TPWinforms_equipo-11\obj\Debug\TPWinfor
 C:\Users\Lucas\Coding\TPWinforms parte 2\TPWinforms_equipo-11\obj\Debug\TPWinforms.csproj.CopyComplete
 C:\Users\Lucas\Coding\TPWinforms parte 2\TPWinforms_equipo-11\obj\Debug\TPWinforms_equipo-11.exe
 C:\Users\Lucas\Coding\TPWinforms parte 2\TPWinforms_equipo-11\obj\Debug\TPWinforms_equipo-11.pdb
+D:\Github\TPWinForm_Equipo-11\TPWinforms_equipo-11\bin\Debug\TPWinforms_equipo-11.exe.config
+D:\Github\TPWinForm_Equipo-11\TPWinforms_equipo-11\bin\Debug\TPWinforms_equipo-11.exe
+D:\Github\TPWinForm_Equipo-11\TPWinforms_equipo-11\bin\Debug\TPWinforms_equipo-11.pdb
+D:\Github\TPWinForm_Equipo-11\TPWinforms_equipo-11\bin\Debug\Business.dll
+D:\Github\TPWinForm_Equipo-11\TPWinforms_equipo-11\bin\Debug\Domain.dll
+D:\Github\TPWinForm_Equipo-11\TPWinforms_equipo-11\bin\Debug\Business.pdb
+D:\Github\TPWinForm_Equipo-11\TPWinforms_equipo-11\bin\Debug\Domain.pdb
+D:\Github\TPWinForm_Equipo-11\TPWinforms_equipo-11\obj\Debug\TPWinforms.csproj.AssemblyReference.cache
+D:\Github\TPWinForm_Equipo-11\TPWinforms_equipo-11\obj\Debug\TPWinforms_equipo_11.Properties.Resources.resources
+D:\Github\TPWinForm_Equipo-11\TPWinforms_equipo-11\obj\Debug\TPWinforms.csproj.GenerateResource.cache
+D:\Github\TPWinForm_Equipo-11\TPWinforms_equipo-11\obj\Debug\TPWinforms.csproj.CoreCompileInputs.cache
+D:\Github\TPWinForm_Equipo-11\TPWinforms_equipo-11\obj\Debug\TPWinforms.csproj.CopyComplete
+D:\Github\TPWinForm_Equipo-11\TPWinforms_equipo-11\obj\Debug\TPWinforms_equipo-11.exe
+D:\Github\TPWinForm_Equipo-11\TPWinforms_equipo-11\obj\Debug\TPWinforms_equipo-11.pdb
+D:\Github\TPWinForm_Equipo-11\TPWinforms_equipo-11\obj\Debug\TPWinforms_equipo_11.FrmAltaArticulo.resources
+D:\Github\TPWinForm_Equipo-11\TPWinforms_equipo-11\obj\Debug\TPWinforms.FrmMain.resources
+D:\Github\TPWinForm_Equipo-11\TPWinforms_equipo-11\obj\Debug\TPWinforms.FrmMenu.resources
+D:\Github\TPWinForm_Equipo-11\TPWinforms_equipo-11\obj\Debug\TPWinforms_equipo_11.FrmMarca.resources

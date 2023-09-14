@@ -23,6 +23,7 @@ namespace Domain
         [DisplayName("Categoría")]
         public Categoria Categoria { get; set; }
         public Imagen Imagen { get; set; }
+        [DisplayName("Imagen")]
         public decimal Precio { get; set; }
     }
 }

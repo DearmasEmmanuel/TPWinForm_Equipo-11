@@ -13,7 +13,7 @@ namespace Data
         private readonly SqlConnection connection;
         private readonly SqlCommand command;
         private SqlDataReader reader;
-        private string connectionString = @"Server=.;Database=CATALOGO_P3_DB;Trusted_Connection=True;";
+        private string connectionString = "server=.\\SQLEXPRESS ;Database=CATALOGO_P3_DB;Trusted_Connection=True;";
         public SqlDataReader Reader
         {
             get { return reader; }
@@ -59,6 +59,20 @@ namespace Data
                 return false;
             }
         }
+        public void ejecutarAccion()
+        {
+            command.Connection = this.connection;
+            try
+            {
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
         public int ExecuteNonQuery()
         {
             try
@@ -72,6 +86,13 @@ namespace Data
                 return -1;
             }
         }
+        public void setearParametros(string nombre, object valor)
+        {
+            command.Parameters.AddWithValue(nombre, valor);
+        }
+
+
+
         public void Close()
         {
             if (this.reader != null)
