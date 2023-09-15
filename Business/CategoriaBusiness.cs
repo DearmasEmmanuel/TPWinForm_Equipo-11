@@ -14,20 +14,20 @@ namespace Business
         {
 
             List<Categoria> categoriaList = new List<Categoria>();
-            AccessData accessData = new AccessData();
+            AccessData data = new AccessData();
             try
             {
-                accessData.SetQuery(@"SELECT Id, Descripcion FROM CATEGORIAS");
+                data.SetQuery(@"SELECT Id, Descripcion FROM CATEGORIAS");
 
 
-                accessData.ExecuteQuery();
+                data.ExecuteQuery();
 
-                while (accessData.Reader.Read())
+                while (data.Reader.Read())
                 {
                     Categoria cateAux = new Categoria()
                     {
-                        Id = (int)accessData.Reader["Id"],
-                        Descripcion = (string)accessData.Reader["Descripcion"],
+                        Id = (int)data.Reader["Id"],
+                        Descripcion = (string)data.Reader["Descripcion"],
                     };
                     categoriaList.Add(cateAux);
                 }
@@ -41,7 +41,7 @@ namespace Business
             }
             finally
             {
-                accessData.Close();
+                data.Close();
             }
         }
     }

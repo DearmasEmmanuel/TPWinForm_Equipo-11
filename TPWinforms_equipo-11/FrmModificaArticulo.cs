@@ -77,7 +77,10 @@ namespace TPWinforms_equipo_11
                     txtNombre.Text = articulo.Nombre.ToString();
                     txtDescripcion.Text = articulo.Descripcion.ToString();
                     txtPrecio.Text = articulo.Precio.ToString();
-                    txtImagenUrl.Text = articulo.Imagen.ImagenUrl.ToString();
+                    if (articulo.Imagen != null)
+                    {
+                        txtImagenUrl.Text = articulo.Imagen[0].ImagenUrl.ToString();
+                    }
                     cboMarca.SelectedValue = articulo.Marca.Id;
                     cboCategoria.SelectedValue = articulo.Categoria.Id;
                 }

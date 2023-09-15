@@ -17,99 +17,119 @@ namespace Business
 {
     public class ArticuloBusiness
     {
+
         private string connectionString = "Server=.\\SQLEXPRESS;Database=CATALOGO_P3_DB;Integrated Security=true";
 
         public List<Articulo> Listar()
         {
             List<Articulo> lista = new List<Articulo>();
-
-            using (SqlConnection conexion = new SqlConnection(connectionString))
+            AccessData data = new AccessData();
+            try
             {
-                using (SqlCommand comando = new SqlCommand())
+                data.SetQuery("SELECT a.Id, a.Codigo, a.Nombre, a.Descripcion, m.Id AS IdMarca, m.Descripcion AS Marca, c.Id as IdCategoria, c.Descripcion AS Categoria, i.Id AS IdImagen, i.IdArticulo, i.ImagenUrl AS Imagen, a.Precio FROM ARTICULOS a INNER JOIN MARCAS m ON a.IdMarca = m.Id  INNER JOIN CATEGORIAS c ON a.IdCategoria = c.Id LEFT JOIN IMAGENES i ON a.Id = i.IdArticulo");
+                data.ExecuteQuery();
+                while (data.Reader.Read())
                 {
-                    comando.Connection = conexion;
-                    comando.CommandType = System.Data.CommandType.Text;
-                    comando.CommandText = "SELECT a.Id, a.Codigo, a.Nombre, a.Descripcion, m.Id AS IdMarca, m.Descripcion AS Marca, c.Id as IdCategoria, c.Descripcion AS Categoria, i.Id AS IdImagen, i.IdArticulo, i.ImagenUrl AS Imagen, a.Precio FROM ARTICULOS a INNER JOIN MARCAS m ON a.IdMarca = m.Id  INNER JOIN CATEGORIAS c ON a.IdCategoria = c.Id LEFT JOIN IMAGENES i ON a.Id = i.IdArticulo";
-
-                    try
+                    Articulo aux = new Articulo()
                     {
-                        conexion.Open();
-                        using (SqlDataReader lector = comando.ExecuteReader())
+                        Id = (int)data.Reader["Id"],
+                        Codigo = data.Reader["Codigo"].ToString(),
+                        Nombre = data.Reader["Nombre"].ToString(),
+                        Descripcion = (string)data.Reader["Descripcion"],
+                        Marca = new Marca
                         {
-                            while (lector.Read())
-                            {
-                                Articulo aux = new Articulo();
-                                aux.Id = (int)lector["Id"];
-                                aux.Codigo = (string)lector["Codigo"];
-                                aux.Nombre = (string)lector["Nombre"];
-                                aux.Descripcion = (string)lector["Descripcion"];
-
-                                aux.Marca = new Marca();
-                                aux.Marca.Id = (int)lector["IdMarca"];
-                                aux.Marca.Descripcion = (string)lector["Marca"];
-
-                                aux.Categoria = new Categoria();
-                                aux.Categoria.Id = (int)lector["IdCategoria"];
-                                aux.Categoria.Descripcion = (string)lector["Categoria"];
-
-                                aux.Imagen = new Imagen();
-
-                                if (!(lector["IdImagen"] is DBNull))
-                                {
-                                    aux.Imagen.Id = (int)lector["IdImagen"];
-                                    aux.Imagen.IdArticulo = (int)lector["IdArticulo"];
-                                    aux.Imagen.ImagenUrl = (string)lector["Imagen"];
-                                }
-                                else
-                                {
-                                    aux.Imagen.Id = 0;
-                                    aux.Imagen.IdArticulo = 0;
-                                    aux.Imagen.ImagenUrl = "";
-                                }
-
-                                aux.Precio = (decimal)lector["Precio"];
-
-                                lista.Add(aux);
-                            }
-                        }
-                    }
-                    catch (Exception ex1)
-                    {
-                        throw new Exception("Error al listar los artículos.", ex1);
-                    }
+                            Id = (int)data.Reader["IdMarca"],
+                            Descripcion = data.Reader["Marca"].ToString()
+                        },
+                        Categoria = new Categoria
+                        {
+                            Id = (int)data.Reader["IdCategoria"],
+                            Descripcion = data.Reader["Categoria"].ToString()
+                        },
+                        Precio = Convert.ToDecimal(data.Reader["Precio"]),
+                        Imagen = ImagenBusiness.List((int)data.Reader["Id"])
+                    };
+                    lista.Add(aux);
                 }
             }
-
+            catch (Exception ex1)
+            {
+                throw new Exception("Error al listar los artículos.", ex1);
+            }
             return lista;
         }
-
-        public void Agregar(Articulo articulo)
+        public int Agregar(Articulo articulo)
         {
-            using (SqlConnection conexion = new SqlConnection(connectionString))
+            AccessData data = new AccessData();
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            try
             {
-                using (SqlCommand comando = new SqlCommand())
+                string columns, values;
+                columns = values = "";
+                if (articulo.Codigo != null && articulo.Codigo != "")
                 {
-                    comando.Connection = conexion;
-                    comando.CommandType = System.Data.CommandType.Text;
-                    comando.CommandText = "INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, Precio, IdMarca, IdCategoria) VALUES (@Codigo, @Nombre, @Descripcion, @Precio, @IdMarca, @IdCategoria)";
-
-                    comando.Parameters.AddWithValue("@Codigo", articulo.Codigo);
-                    comando.Parameters.AddWithValue("@Nombre", articulo.Nombre);
-                    comando.Parameters.AddWithValue("@Descripcion", articulo.Descripcion);
-                    comando.Parameters.AddWithValue("@Precio", articulo.Precio);
-                    comando.Parameters.AddWithValue("@IdMarca", articulo.Marca.Id);
-                    comando.Parameters.AddWithValue("@IdCategoria", articulo.Categoria.Id);
-
-                    try
-                    {
-                        conexion.Open();
-                        comando.ExecuteNonQuery();
-                    }
-                    catch (Exception ex)
-                    {
-                        throw new Exception("Error al agregar el artículo.", ex);
-                    }
+                    columns += "Codigo,";
+                    values += $"@Codigo,";
+                    parameters.Add(new SqlParameter("@Codigo", articulo.Codigo));
                 }
+                if (articulo.Nombre != null && articulo.Nombre != "")
+                {
+                    columns += "Nombre,";
+                    values += $"@Nombre,";
+                    parameters.Add(new SqlParameter("@Nombre", articulo.Nombre));
+                }
+                if (articulo.Descripcion != null && articulo.Descripcion != "")
+                {
+                    columns += "Descripcion,";
+                    values += $"@Descripcion,";
+                    parameters.Add(new SqlParameter("@Descripcion", articulo.Descripcion));
+                }
+                if (articulo.Precio != null)
+                {
+                    columns += "Precio,";
+                    values += $"@Precio,";
+                    parameters.Add(new SqlParameter("@Precio", articulo.Precio));
+                }
+                string query = $@"
+                    DECLARE @IdGenerado int
+
+                    INSERT INTO ARTICULOS 
+                        ({columns}IdMarca,IdCategoria)
+                    VALUES
+                        ({values}@BrandId,@CategoryId)
+                    SET @IdGenerado = SCOPE_IDENTITY()
+                    ";
+
+                parameters.Add(new SqlParameter("@BrandId", articulo.Marca.Id));
+                parameters.Add(new SqlParameter("@CategoryId", articulo.Categoria.Id));
+
+                int imagesCount = articulo.Imagen is null ? 0 : articulo.Imagen.Count;
+                if (imagesCount > 0)
+                {
+                    query += @"
+                        INSERT INTO IMAGENES
+                            (IdArticulo,ImagenUrl)
+                        VALUES 
+                        ";
+                    for (int i = 0; i < imagesCount; i++)
+                    {
+                        query += $" (@IdGenerado, @ImagenUrl{i}),";
+                        parameters.Add(new SqlParameter($"@ImagenUrl{i}", articulo.Imagen[i].ImagenUrl));
+                    }
+                    query = query.Remove(query.Length - 1);
+                }
+
+                data.SetQuery(query, parameters);
+
+                return data.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                data.Close();
             }
         }
 

@@ -13,13 +13,17 @@ namespace Data
         private readonly SqlConnection connection;
         private readonly SqlCommand command;
         private SqlDataReader reader;
-        private string connectionString = "server=.\\SQLEXPRESS ;Database=CATALOGO_P3_DB;Trusted_Connection=True;";
+        private string connectionString = "Server=. ;Database=CATALOGO_P3_DB;Trusted_Connection=True;";
         public SqlDataReader Reader
         {
             get { return reader; }
         }
         public AccessData()
         {
+            //if(Environment.MachineName == "DESKTOP-J2J0GK7")
+            //{
+            //    connectionString = "Server=.;Database=CATALOGO_P3_DB;Trusted_Connection=True;";
+            //}
             this.connection = new SqlConnection(connectionString);
             this.command = new SqlCommand();
         }

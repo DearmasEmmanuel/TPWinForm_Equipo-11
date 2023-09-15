@@ -31,7 +31,7 @@ namespace TPWinforms
                 listaArticulo = business.Listar();
                 dgvArticulo.DataSource = listaArticulo;
                 dgvArticulo.Columns["Id"].Visible = false;
-                dgvArticulo.Columns["Imagen"].Visible = false;
+                //dgvArticulo.Columns["Imagen"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -46,7 +46,7 @@ namespace TPWinforms
                 Articulo articuloSelecionado = (Articulo)dgvArticulo.CurrentRow.DataBoundItem;
                 if (articuloSelecionado != null && articuloSelecionado.Imagen != null)
                 {
-                    cargarImagen(articuloSelecionado.Imagen.ImagenUrl);
+                    cargarImagen(articuloSelecionado.Imagen[0].ImagenUrl);
                 }
             }
         }
@@ -92,7 +92,7 @@ namespace TPWinforms
                 dgvArticulo.DataSource = listaArticulo;
                 dgvArticulo.Columns["Id"].Visible = false;
                 dgvArticulo.Columns["Imagen"].Visible = false;
-                cargarImagen(listaArticulo[0].Imagen.ImagenUrl);
+                cargarImagen(listaArticulo[0].Imagen[0].ImagenUrl);
             }
             catch (Exception ex)
             {
@@ -100,6 +100,25 @@ namespace TPWinforms
             }
         }
 
+        private void numPriceMin_ValueChanged(object sender, EventArgs e)
+        {
 
+        }
+
+        private void buttonBrandWindow_Click(object sender, EventArgs e)
+        {
+            FrmMarca frmMarca = new FrmMarca();
+            frmMarca.Show();
+        }
+
+        private void buttonCategoryWindow_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

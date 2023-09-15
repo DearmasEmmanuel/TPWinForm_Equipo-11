@@ -70,3 +70,7 @@ C:\Users\Usuario\Desktop\Programacion_3\Repositorio\Remoto\TPWinForm_Equipo-11\T
 C:\Users\Usuario\Desktop\Programacion_3\Repositorio\Remoto\TPWinForm_Equipo-11\TPWinforms_equipo-11\obj\Debug\TPWinforms_equipo-11.exe
 C:\Users\Usuario\Desktop\Programacion_3\Repositorio\Remoto\TPWinForm_Equipo-11\TPWinforms_equipo-11\obj\Debug\TPWinforms_equipo-11.pdb
 C:\Users\Usuario\Desktop\Programacion_3\Repositorio\Remoto\TPWinForm_Equipo-11\TPWinforms_equipo-11\obj\Debug\TPWinforms_equipo_11.FrmModificaArticulo.resources
+C:\Users\Lucas\Coding\TPWinforms parte 2\TPWinforms_equipo-11\obj\Debug\TPWinforms_equipo_11.FrmAltaArticulo.resources
+C:\Users\Lucas\Coding\TPWinforms parte 2\TPWinforms_equipo-11\obj\Debug\TPWinforms.FrmMain.resources
+C:\Users\Lucas\Coding\TPWinforms parte 2\TPWinforms_equipo-11\obj\Debug\TPWinforms_equipo_11.FrmMarca.resources
+C:\Users\Lucas\Coding\TPWinforms parte 2\TPWinforms_equipo-11\obj\Debug\TPWinforms_equipo_11.FrmModificaArticulo.resources
