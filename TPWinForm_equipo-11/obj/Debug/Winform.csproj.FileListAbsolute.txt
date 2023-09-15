@@ -1,0 +1,15 @@
+C:\Users\Usuario\Desktop\Programacion_3\Repositorio\Remoto\TPWinForm_Equipo-11\TPWinForm_equipo-11\bin\Debug\WinForm.exe.config
+C:\Users\Usuario\Desktop\Programacion_3\Repositorio\Remoto\TPWinForm_Equipo-11\TPWinForm_equipo-11\bin\Debug\WinForm.exe
+C:\Users\Usuario\Desktop\Programacion_3\Repositorio\Remoto\TPWinForm_Equipo-11\TPWinForm_equipo-11\bin\Debug\WinForm.pdb
+C:\Users\Usuario\Desktop\Programacion_3\Repositorio\Remoto\TPWinForm_Equipo-11\TPWinForm_equipo-11\obj\Debug\Winform.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\Programacion_3\Repositorio\Remoto\TPWinForm_Equipo-11\TPWinForm_equipo-11\obj\Debug\WinForm.Properties.Resources.resources
+C:\Users\Usuario\Desktop\Programacion_3\Repositorio\Remoto\TPWinForm_Equipo-11\TPWinForm_equipo-11\obj\Debug\Winform.csproj.GenerateResource.cache
+C:\Users\Usuario\Desktop\Programacion_3\Repositorio\Remoto\TPWinForm_Equipo-11\TPWinForm_equipo-11\obj\Debug\Winform.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\Programacion_3\Repositorio\Remoto\TPWinForm_Equipo-11\TPWinForm_equipo-11\obj\Debug\WinForm.exe
+C:\Users\Usuario\Desktop\Programacion_3\Repositorio\Remoto\TPWinForm_Equipo-11\TPWinForm_equipo-11\obj\Debug\WinForm.pdb
+C:\Users\Usuario\Desktop\Programacion_3\Repositorio\Remoto\TPWinForm_Equipo-11\TPWinForm_equipo-11\bin\Debug\Business.dll
+C:\Users\Usuario\Desktop\Programacion_3\Repositorio\Remoto\TPWinForm_Equipo-11\TPWinForm_equipo-11\bin\Debug\Domain.dll
+C:\Users\Usuario\Desktop\Programacion_3\Repositorio\Remoto\TPWinForm_Equipo-11\TPWinForm_equipo-11\bin\Debug\Business.pdb
+C:\Users\Usuario\Desktop\Programacion_3\Repositorio\Remoto\TPWinForm_Equipo-11\TPWinForm_equipo-11\bin\Debug\Domain.pdb
+C:\Users\Usuario\Desktop\Programacion_3\Repositorio\Remoto\TPWinForm_Equipo-11\TPWinForm_equipo-11\obj\Debug\TPWinForm_equipo_11.TPWinforms_Catalogo.resources
+C:\Users\Usuario\Desktop\Programacion_3\Repositorio\Remoto\TPWinForm_Equipo-11\TPWinForm_equipo-11\obj\Debug\Winform.csproj.CopyComplete

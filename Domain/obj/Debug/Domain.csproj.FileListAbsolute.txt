@@ -10,3 +10,9 @@ D:\Github\TPWinForm_Equipo-11\Domain\obj\Debug\Domain.csproj.AssemblyReference.c
 D:\Github\TPWinForm_Equipo-11\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
 D:\Github\TPWinForm_Equipo-11\Domain\obj\Debug\Domain.dll
 D:\Github\TPWinForm_Equipo-11\Domain\obj\Debug\Domain.pdb
+C:\Users\Usuario\Desktop\Programacion_3\Repositorio\Remoto\TPWinForm_Equipo-11\Domain\bin\Debug\Domain.dll
+C:\Users\Usuario\Desktop\Programacion_3\Repositorio\Remoto\TPWinForm_Equipo-11\Domain\bin\Debug\Domain.pdb
+C:\Users\Usuario\Desktop\Programacion_3\Repositorio\Remoto\TPWinForm_Equipo-11\Domain\obj\Debug\Domain.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\Programacion_3\Repositorio\Remoto\TPWinForm_Equipo-11\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\Programacion_3\Repositorio\Remoto\TPWinForm_Equipo-11\Domain\obj\Debug\Domain.dll
+C:\Users\Usuario\Desktop\Programacion_3\Repositorio\Remoto\TPWinForm_Equipo-11\Domain\obj\Debug\Domain.pdb

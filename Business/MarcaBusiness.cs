@@ -11,7 +11,7 @@ namespace Business
 {
     public class MarcaBusiness
     {
-        public static List<Marca> List()
+        public List<Marca> List()
         {
             List<Marca> marcaList = new List<Marca>();
             AccessData data = new AccessData();

@@ -23,8 +23,8 @@ namespace TPWinforms_equipo_11
 
         private void FrmMarca_Load(object sender, EventArgs e)
         {
-
-            dgvMarca.DataSource = MarcaBusiness.List();
+            MarcaBusiness marcaNegocio = new MarcaBusiness();
+            dgvMarca.DataSource = marcaNegocio.List();
 
         }
 

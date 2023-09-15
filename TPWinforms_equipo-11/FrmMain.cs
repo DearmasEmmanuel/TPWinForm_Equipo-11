@@ -25,11 +25,18 @@ namespace TPWinforms
         private void TPWinforms_Catalogo_Load(object sender, EventArgs e)
         {
             ArticuloBusiness business = new ArticuloBusiness();
-            listaArticulo = business.Listar();
-            dgvArticulo.DataSource = listaArticulo;
-           /// pbxArticulo.Load(listaArticulo[0].Imagen.ImagenUrl);
-            //dgvArticulo.Columns["Id"].Visible = false;
-            //dgvArticulo.Columns["Imagen"].Visible = false;
+
+            try
+            {
+                listaArticulo = business.Listar();
+                dgvArticulo.DataSource = listaArticulo;
+                dgvArticulo.Columns["Id"].Visible = false;
+                dgvArticulo.Columns["Imagen"].Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener los datos de la BD", ex.ToString());
+            }
         }
 
         private void dvgArticulo_SelectionChanged(object sender, EventArgs e)
@@ -43,8 +50,6 @@ namespace TPWinforms
                 }
             }
         }
-
-
         private void cargarImagen(string imagen)
         {
             try
@@ -61,6 +66,38 @@ namespace TPWinforms
         {
             FrmAltaArticulo alta = new FrmAltaArticulo();
             alta.ShowDialog();
+        }
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            Articulo seleccionado;
+
+            if (dgvArticulo.CurrentCell is null)
+            {
+                MessageBox.Show("Debe Seleccionar un Articulo");
+            }
+            else
+            {
+                seleccionado = (Articulo)dgvArticulo.CurrentRow.DataBoundItem;
+                FrmModificaArticulo modificar = new FrmModificaArticulo(seleccionado);
+                modificar.ShowDialog();
+                cargar();
+            }
+        }
+        private void cargar()
+        {
+            ArticuloBusiness business = new ArticuloBusiness();
+            try
+            {
+                listaArticulo = business.Listar();
+                dgvArticulo.DataSource = listaArticulo;
+                dgvArticulo.Columns["Id"].Visible = false;
+                dgvArticulo.Columns["Imagen"].Visible = false;
+                cargarImagen(listaArticulo[0].Imagen.ImagenUrl);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
 

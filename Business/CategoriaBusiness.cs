@@ -10,7 +10,7 @@ namespace Business
 {
     public class CategoriaBusiness
     {
-        public static List<Categoria> List()
+        public List<Categoria> List()
         {
 
             List<Categoria> categoriaList = new List<Categoria>();

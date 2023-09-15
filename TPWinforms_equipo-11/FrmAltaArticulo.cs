@@ -48,9 +48,10 @@ namespace TPWinforms_equipo_11
             {
                 // Asegúrate de que las clases MarcaBusiness y CategoriaBusiness tengan métodos estáticos List() que devuelvan una lista de elementos.
                 // Puedes cambiar MarcaBusiness.List() y CategoriaBusiness.List() por los métodos correctos que obtienen la lista de marcas y categorías.
-
-                cbMarcas.DataSource = MarcaBusiness.List();
-                cbCategoria.DataSource = CategoriaBusiness.List();
+                MarcaBusiness marcaNegocio = new MarcaBusiness();
+                CategoriaBusiness categoriaNegocio = new CategoriaBusiness();
+                cbMarcas.DataSource = marcaNegocio.List();
+                cbCategoria.DataSource = categoriaNegocio.List();
             }
             catch (Exception ex)
             {
