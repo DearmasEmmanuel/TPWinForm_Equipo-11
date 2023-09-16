@@ -91,7 +91,7 @@ namespace TPWinforms
                 listaArticulo = business.Listar();
                 dgvArticulo.DataSource = listaArticulo;
                 dgvArticulo.Columns["Id"].Visible = false;
-                dgvArticulo.Columns["Imagen"].Visible = false;
+                //dgvArticulo.Columns["Imagen"].Visible = false;
                 cargarImagen(listaArticulo[0].Imagen[0].ImagenUrl);
             }
             catch (Exception ex)
@@ -118,7 +118,26 @@ namespace TPWinforms
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-
+            eliminar();
+        }
+        private void eliminar()
+        {
+            ArticuloBusiness business = new ArticuloBusiness();
+            Articulo seleccionado;
+            try
+            {
+                DialogResult respuesta = MessageBox.Show("¿De verdad querés eliminarlo?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (respuesta == DialogResult.Yes)
+                {
+                    seleccionado = (Articulo)dgvArticulo.CurrentRow.DataBoundItem;
+                    business.eliminar(seleccionado.Id);
+                    cargar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

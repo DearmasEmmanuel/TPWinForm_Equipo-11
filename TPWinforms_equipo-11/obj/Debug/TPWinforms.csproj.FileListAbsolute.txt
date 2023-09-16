@@ -62,7 +62,6 @@ C:\Users\Usuario\Desktop\Programacion_3\Repositorio\Remoto\TPWinForm_Equipo-11\T
 C:\Users\Usuario\Desktop\Programacion_3\Repositorio\Remoto\TPWinForm_Equipo-11\TPWinforms_equipo-11\obj\Debug\TPWinforms_equipo_11.FrmAltaArticulo.resources
 C:\Users\Usuario\Desktop\Programacion_3\Repositorio\Remoto\TPWinForm_Equipo-11\TPWinforms_equipo-11\obj\Debug\TPWinforms.FrmMain.resources
 C:\Users\Usuario\Desktop\Programacion_3\Repositorio\Remoto\TPWinForm_Equipo-11\TPWinforms_equipo-11\obj\Debug\TPWinforms_equipo_11.FrmMarca.resources
-C:\Users\Usuario\Desktop\Programacion_3\Repositorio\Remoto\TPWinForm_Equipo-11\TPWinforms_equipo-11\obj\Debug\TPWinforms.FrmMenu.resources
 C:\Users\Usuario\Desktop\Programacion_3\Repositorio\Remoto\TPWinForm_Equipo-11\TPWinforms_equipo-11\obj\Debug\TPWinforms_equipo_11.Properties.Resources.resources
 C:\Users\Usuario\Desktop\Programacion_3\Repositorio\Remoto\TPWinForm_Equipo-11\TPWinforms_equipo-11\obj\Debug\TPWinforms.csproj.GenerateResource.cache
 C:\Users\Usuario\Desktop\Programacion_3\Repositorio\Remoto\TPWinForm_Equipo-11\TPWinforms_equipo-11\obj\Debug\TPWinforms.csproj.CoreCompileInputs.cache

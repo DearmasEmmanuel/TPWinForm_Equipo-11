@@ -58,6 +58,7 @@ namespace Business
             }
             return lista;
         }
+
         public int Agregar(Articulo articulo)
         {
             AccessData data = new AccessData();
@@ -164,6 +165,35 @@ namespace Business
                 }
 
             }
+        }
+
+        public void eliminar(int id)
+        {
+            using(SqlConnection conexion = new SqlConnection(connectionString))
+            {
+                using (SqlCommand comando = new SqlCommand()) 
+                {
+                    comando.Connection = conexion;
+                    comando.CommandType = System.Data.CommandType.Text;
+                    comando.CommandText = "DELETE FROM ARTICULOS WHERE Id = @Id";
+
+                    comando.Parameters.AddWithValue("@Id", id);
+
+                    try
+                    {
+                        conexion.Open();
+                        comando.ExecuteNonQuery();
+                        //AccesoDatos datos = new AccesoDatos();
+                        //datos.setearConsulta("delete from pokemons where id = @id");
+                        //datos.setearParametro("@id", id);
+                        //datos.ejecutarAccion();
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception("Error al eliminar el artículo.", ex);
+                    }
+                }
+            }          
         }
     }
 }
