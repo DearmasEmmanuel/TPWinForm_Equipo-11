@@ -41,7 +41,7 @@
             this.lbMarca = new System.Windows.Forms.Label();
             this.lbCategoria = new System.Windows.Forms.Label();
             this.lbUrlimagen = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtImagenUrl = new System.Windows.Forms.TextBox();
             this.cbMarcas = new System.Windows.Forms.ComboBox();
             this.cbCategoria = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
@@ -157,12 +157,12 @@
             this.lbUrlimagen.TabIndex = 12;
             this.lbUrlimagen.Text = "Url Imagen:";
             // 
-            // textBox1
+            // txtImagenUrl
             // 
-            this.textBox1.Location = new System.Drawing.Point(188, 176);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 13;
+            this.txtImagenUrl.Location = new System.Drawing.Point(188, 176);
+            this.txtImagenUrl.Name = "txtImagenUrl";
+            this.txtImagenUrl.Size = new System.Drawing.Size(100, 20);
+            this.txtImagenUrl.TabIndex = 13;
             // 
             // cbMarcas
             // 
@@ -187,7 +187,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.cbCategoria);
             this.Controls.Add(this.cbMarcas);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtImagenUrl);
             this.Controls.Add(this.lbUrlimagen);
             this.Controls.Add(this.lbCategoria);
             this.Controls.Add(this.lbMarca);
@@ -225,7 +225,7 @@
         private System.Windows.Forms.Label lbMarca;
         private System.Windows.Forms.Label lbCategoria;
         private System.Windows.Forms.Label lbUrlimagen;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtImagenUrl;
         private System.Windows.Forms.ComboBox cbMarcas;
         private System.Windows.Forms.ComboBox cbCategoria;
     }

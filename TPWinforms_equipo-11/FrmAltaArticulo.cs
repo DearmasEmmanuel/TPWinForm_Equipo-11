@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using Business;
 using Domain;
@@ -30,8 +31,18 @@ namespace TPWinforms_equipo_11
                 nuevo.Precio = decimal.Parse(txtPrecio.Text);
                 nuevo.Marca = (Marca)cbMarcas.SelectedItem;
                 nuevo.Categoria = (Categoria)cbCategoria.SelectedItem;
+                Imagen nuevaImagen = new Imagen
+                {
+                    IdArticulo = nuevo.Id, // Debes asignar el Id del artículo después de guardarlo en la base de datos
+                    ImagenUrl = txtImagenUrl.Text
+                };
+                nuevo.Imagen = new List<Imagen> { nuevaImagen };
 
                 articuloBusiness.Agregar(nuevo);
+                
+               
+
+
 
                 MessageBox.Show("Agregado Exitosamente");
                 this.Close();

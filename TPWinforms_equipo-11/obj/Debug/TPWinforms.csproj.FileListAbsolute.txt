@@ -73,3 +73,21 @@ C:\Users\Lucas\Coding\TPWinforms parte 2\TPWinforms_equipo-11\obj\Debug\TPWinfor
 C:\Users\Lucas\Coding\TPWinforms parte 2\TPWinforms_equipo-11\obj\Debug\TPWinforms.FrmMain.resources
 C:\Users\Lucas\Coding\TPWinforms parte 2\TPWinforms_equipo-11\obj\Debug\TPWinforms_equipo_11.FrmMarca.resources
 C:\Users\Lucas\Coding\TPWinforms parte 2\TPWinforms_equipo-11\obj\Debug\TPWinforms_equipo_11.FrmModificaArticulo.resources
+D:\GithubManu2\TPWinForm_Equipo-11\TPWinforms_equipo-11\bin\Debug\TPWinforms_equipo-11.exe.config
+D:\GithubManu2\TPWinForm_Equipo-11\TPWinforms_equipo-11\bin\Debug\TPWinforms_equipo-11.exe
+D:\GithubManu2\TPWinForm_Equipo-11\TPWinforms_equipo-11\bin\Debug\TPWinforms_equipo-11.pdb
+D:\GithubManu2\TPWinForm_Equipo-11\TPWinforms_equipo-11\bin\Debug\Business.dll
+D:\GithubManu2\TPWinForm_Equipo-11\TPWinforms_equipo-11\bin\Debug\Domain.dll
+D:\GithubManu2\TPWinForm_Equipo-11\TPWinforms_equipo-11\bin\Debug\Business.pdb
+D:\GithubManu2\TPWinForm_Equipo-11\TPWinforms_equipo-11\bin\Debug\Domain.pdb
+D:\GithubManu2\TPWinForm_Equipo-11\TPWinforms_equipo-11\obj\Debug\TPWinforms.csproj.AssemblyReference.cache
+D:\GithubManu2\TPWinForm_Equipo-11\TPWinforms_equipo-11\obj\Debug\TPWinforms_equipo_11.FrmAltaArticulo.resources
+D:\GithubManu2\TPWinForm_Equipo-11\TPWinforms_equipo-11\obj\Debug\TPWinforms.FrmMain.resources
+D:\GithubManu2\TPWinForm_Equipo-11\TPWinforms_equipo-11\obj\Debug\TPWinforms_equipo_11.FrmMarca.resources
+D:\GithubManu2\TPWinForm_Equipo-11\TPWinforms_equipo-11\obj\Debug\TPWinforms_equipo_11.FrmModificaArticulo.resources
+D:\GithubManu2\TPWinForm_Equipo-11\TPWinforms_equipo-11\obj\Debug\TPWinforms_equipo_11.Properties.Resources.resources
+D:\GithubManu2\TPWinForm_Equipo-11\TPWinforms_equipo-11\obj\Debug\TPWinforms.csproj.GenerateResource.cache
+D:\GithubManu2\TPWinForm_Equipo-11\TPWinforms_equipo-11\obj\Debug\TPWinforms.csproj.CoreCompileInputs.cache
+D:\GithubManu2\TPWinForm_Equipo-11\TPWinforms_equipo-11\obj\Debug\TPWinforms.csproj.CopyComplete
+D:\GithubManu2\TPWinForm_Equipo-11\TPWinforms_equipo-11\obj\Debug\TPWinforms_equipo-11.exe
+D:\GithubManu2\TPWinForm_Equipo-11\TPWinforms_equipo-11\obj\Debug\TPWinforms_equipo-11.pdb

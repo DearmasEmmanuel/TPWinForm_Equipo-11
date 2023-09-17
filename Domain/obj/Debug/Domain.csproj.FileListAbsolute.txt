@@ -22,3 +22,9 @@ C:\Users\Lucas\Coding\TPWinforms parte 2\Domain\obj\Debug\Domain.csproj.Assembly
 C:\Users\Lucas\Coding\TPWinforms parte 2\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
 C:\Users\Lucas\Coding\TPWinforms parte 2\Domain\obj\Debug\Domain.dll
 C:\Users\Lucas\Coding\TPWinforms parte 2\Domain\obj\Debug\Domain.pdb
+D:\GithubManu2\TPWinForm_Equipo-11\Domain\bin\Debug\Domain.dll
+D:\GithubManu2\TPWinForm_Equipo-11\Domain\bin\Debug\Domain.pdb
+D:\GithubManu2\TPWinForm_Equipo-11\Domain\obj\Debug\Domain.csproj.AssemblyReference.cache
+D:\GithubManu2\TPWinForm_Equipo-11\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+D:\GithubManu2\TPWinForm_Equipo-11\Domain\obj\Debug\Domain.dll
+D:\GithubManu2\TPWinForm_Equipo-11\Domain\obj\Debug\Domain.pdb

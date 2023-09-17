@@ -85,7 +85,7 @@ namespace Business
                     values += $"@Descripcion,";
                     parameters.Add(new SqlParameter("@Descripcion", articulo.Descripcion));
                 }
-                if (articulo.Precio != null)
+                if (articulo.Precio != 0)
                 {
                     columns += "Precio,";
                     values += $"@Precio,";

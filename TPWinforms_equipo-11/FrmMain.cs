@@ -24,39 +24,26 @@ namespace TPWinforms
 
         private void TPWinforms_Catalogo_Load(object sender, EventArgs e)
         {
-            ArticuloBusiness business = new ArticuloBusiness();
-
-            try
-            {
-                listaArticulo = business.Listar();
-                dgvArticulo.DataSource = listaArticulo;
-                dgvArticulo.Columns["Id"].Visible = false;
-                //dgvArticulo.Columns["Imagen"].Visible = false;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al obtener los datos de la BD", ex.ToString());
-            }
+            cargar();
         }
 
         private void dvgArticulo_SelectionChanged(object sender, EventArgs e)
         {
-            if (dgvArticulo.SelectedRows.Count > 0)
+            Articulo articuloSelecionado = dgvArticulo.CurrentRow?.DataBoundItem as Articulo;
+            if (articuloSelecionado != null && articuloSelecionado.Imagen.Count > 0)
             {
-                Articulo articuloSelecionado = (Articulo)dgvArticulo.CurrentRow.DataBoundItem;
-                if (articuloSelecionado != null && articuloSelecionado.Imagen != null)
-                {
-                    cargarImagen(articuloSelecionado.Imagen[0].ImagenUrl);
-                }
+                string primeraImagenUrl = articuloSelecionado.Imagen[0].ImagenUrl;
+                cargarImagen(primeraImagenUrl);
             }
         }
+
         private void cargarImagen(string imagen)
         {
             try
             {
                 pbxArticulo.Load(imagen);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 pbxArticulo.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
             }
