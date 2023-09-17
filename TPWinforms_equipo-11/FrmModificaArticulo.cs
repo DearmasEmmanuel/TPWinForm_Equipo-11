@@ -45,6 +45,12 @@ namespace TPWinforms_equipo_11
                 nuevo.Precio = decimal.Parse(txtPrecio.Text);
                 nuevo.Marca = (Marca)cboMarca.SelectedItem;
                 nuevo.Categoria = (Categoria)cboCategoria.SelectedItem;
+                Imagen nuevaImagen = new Imagen
+                {
+                    IdArticulo = nuevo.Id,
+                    ImagenUrl = txtImagenUrl.Text
+                };
+                nuevo.Imagen = new List<Imagen> { nuevaImagen };
 
                 articuloBusiness.Modificar(nuevo);
 
@@ -80,6 +86,7 @@ namespace TPWinforms_equipo_11
                     if (articulo.Imagen != null)
                     {
                         txtImagenUrl.Text = articulo.Imagen[0].ImagenUrl.ToString();
+                        cargarImagen(txtImagenUrl.Text);
                     }
                     cboMarca.SelectedValue = articulo.Marca.Id;
                     cboCategoria.SelectedValue = articulo.Categoria.Id;
@@ -91,5 +98,19 @@ namespace TPWinforms_equipo_11
             }
 
         }
+
+        private void cargarImagen(string imagen)
+        {
+            try
+            {
+                pbxArticulo.Load(imagen);
+            }
+            catch (Exception)
+            {
+                pbxArticulo.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
+            }
+        }
+
+
     }
 }

@@ -33,7 +33,7 @@ namespace TPWinforms_equipo_11
                 nuevo.Categoria = (Categoria)cbCategoria.SelectedItem;
                 Imagen nuevaImagen = new Imagen
                 {
-                    IdArticulo = nuevo.Id, // Debes asignar el Id del artículo después de guardarlo en la base de datos
+                    IdArticulo = nuevo.Id, 
                     ImagenUrl = txtImagenUrl.Text
                 };
                 nuevo.Imagen = new List<Imagen> { nuevaImagen };
@@ -57,8 +57,7 @@ namespace TPWinforms_equipo_11
         {
             try
             {
-                // Asegúrate de que las clases MarcaBusiness y CategoriaBusiness tengan métodos estáticos List() que devuelvan una lista de elementos.
-                // Puedes cambiar MarcaBusiness.List() y CategoriaBusiness.List() por los métodos correctos que obtienen la lista de marcas y categorías.
+           
                 MarcaBusiness marcaNegocio = new MarcaBusiness();
                 CategoriaBusiness categoriaNegocio = new CategoriaBusiness();
                 cbMarcas.DataSource = marcaNegocio.List();
@@ -67,6 +66,23 @@ namespace TPWinforms_equipo_11
             catch (Exception ex)
             {
                 MessageBox.Show("Error al cargar datos: " + ex.Message);
+            }
+        }
+
+        private void txtImagenUrl_Leave(object sender, EventArgs e)
+        {
+            cargarImagen(txtImagenUrl.Text);
+
+        }
+        private void cargarImagen(string imagen)
+        {
+            try
+            {
+                pbxArticulo.Load(imagen);
+            }
+            catch (Exception)
+            {
+                pbxArticulo.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
             }
         }
     }

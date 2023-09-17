@@ -53,6 +53,7 @@ namespace TPWinforms
         {
             FrmAltaArticulo alta = new FrmAltaArticulo();
             alta.ShowDialog();
+            cargar();
         }
         private void btnModificar_Click(object sender, EventArgs e)
         {

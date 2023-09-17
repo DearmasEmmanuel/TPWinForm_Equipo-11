@@ -45,6 +45,8 @@
             this.lbNombre = new System.Windows.Forms.Label();
             this.lbCodigo = new System.Windows.Forms.Label();
             this.lblMarca = new System.Windows.Forms.Label();
+            this.pbxArticulo = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).BeginInit();
             this.SuspendLayout();
             // 
             // cboCategoria
@@ -188,11 +190,21 @@
             this.lblMarca.TabIndex = 33;
             this.lblMarca.Text = "Marca:";
             // 
+            // pbxArticulo
+            // 
+            this.pbxArticulo.Location = new System.Drawing.Point(452, 67);
+            this.pbxArticulo.Name = "pbxArticulo";
+            this.pbxArticulo.Size = new System.Drawing.Size(250, 228);
+            this.pbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxArticulo.TabIndex = 34;
+            this.pbxArticulo.TabStop = false;
+            // 
             // FrmModificaArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pbxArticulo);
             this.Controls.Add(this.lblMarca);
             this.Controls.Add(this.cboCategoria);
             this.Controls.Add(this.cboMarca);
@@ -213,6 +225,7 @@
             this.Name = "FrmModificaArticulo";
             this.Text = "Modificar Articulo";
             this.Load += new System.EventHandler(this.FrmModificaArticulo_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -237,5 +250,6 @@
         private System.Windows.Forms.Label lbNombre;
         private System.Windows.Forms.Label lbCodigo;
         private System.Windows.Forms.Label lblMarca;
+        private System.Windows.Forms.PictureBox pbxArticulo;
     }
 }

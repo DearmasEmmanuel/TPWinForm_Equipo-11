@@ -136,36 +136,60 @@ namespace Business
 
         public void Modificar(Articulo articulo)
         {
-            using (SqlConnection conexion = new SqlConnection(connectionString))
+            AccessData data = new AccessData();
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            try
             {
-                using (SqlCommand comando = new SqlCommand())
+                string query = @"
+            UPDATE ARTICULOS 
+            SET Codigo = @Codigo, 
+                Nombre = @Nombre, 
+                Descripcion = @Descripcion, 
+                Precio = @Precio, 
+                IdMarca = @IdMarca, 
+                IdCategoria = @IdCategoria
+            WHERE Id = @Id";
+
+                parameters.Add(new SqlParameter("@Codigo", articulo.Codigo));
+                parameters.Add(new SqlParameter("@Nombre", articulo.Nombre));
+                parameters.Add(new SqlParameter("@Descripcion", articulo.Descripcion));
+                parameters.Add(new SqlParameter("@Precio", articulo.Precio));
+                parameters.Add(new SqlParameter("@IdMarca", articulo.Marca.Id));
+                parameters.Add(new SqlParameter("@IdCategoria", articulo.Categoria.Id));
+                parameters.Add(new SqlParameter("@Id", articulo.Id));
+
+                data.SetQuery(query, parameters);
+
+                // Actualizar todas las imágenes en la tabla IMAGENES en una sola consulta
+                StringBuilder updateImagenQuery = new StringBuilder();
+                updateImagenQuery.Append("UPDATE IMAGENES SET ImagenUrl = CASE IdArticulo ");
+
+                for (int i = 0; i < articulo.Imagen.Count; i++)
                 {
-                    comando.Connection = conexion;
-                    comando.CommandType = System.Data.CommandType.Text;
-                    comando.CommandText = "UPDATE ARTICULOS set Codigo = @Codigo, Nombre = @Nombre, Descripcion = @Descripcion, Precio = @Precio, IdMarca = @IdMarca, IdCategoria = @IdCategoria WHERE Id = @Id";
-
-                    comando.Parameters.AddWithValue("@Codigo", articulo.Codigo);
-                    comando.Parameters.AddWithValue("@Nombre", articulo.Nombre);
-                    comando.Parameters.AddWithValue("@Descripcion", articulo.Descripcion);
-                    comando.Parameters.AddWithValue("@Precio", articulo.Precio);
-                    comando.Parameters.AddWithValue("@IdMarca", articulo.Marca.Id);
-                    comando.Parameters.AddWithValue("@IdCategoria", articulo.Categoria.Id);
-                    comando.Parameters.AddWithValue("@Id", articulo.Id);
-
-                    try
-                    {
-                        conexion.Open();
-                        comando.ExecuteNonQuery();
-                    }
-                    catch (Exception ex)
-                    {
-                        throw new Exception("Error al modificar el artículo.", ex);
-                    }
-
+                    updateImagenQuery.Append($"WHEN {articulo.Id} THEN @ImagenUrl{i} ");
+                    parameters.Add(new SqlParameter($"@ImagenUrl{i}", articulo.Imagen[i].ImagenUrl));
                 }
 
+                updateImagenQuery.Append("ELSE ImagenUrl END");
+
+                data.SetQuery(updateImagenQuery.ToString(), parameters);
+
+                // Ejecutar la actualización
+                data.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al modificar el artículo.", ex);
+            }
+            finally
+            {
+                data.Close();
             }
         }
+
+
+
+
 
         public void eliminar(int id)
         {
