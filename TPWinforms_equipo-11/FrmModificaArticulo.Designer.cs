@@ -224,6 +224,7 @@
             this.Controls.Add(this.lbCodigo);
             this.Name = "FrmModificaArticulo";
             this.Text = "Modificar Articulo";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmModificaArticulo_FormClosing);
             this.Load += new System.EventHandler(this.FrmModificaArticulo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).EndInit();
             this.ResumeLayout(false);

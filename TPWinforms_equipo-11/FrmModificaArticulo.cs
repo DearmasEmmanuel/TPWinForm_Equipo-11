@@ -9,20 +9,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TPWinforms;
 
 namespace TPWinforms_equipo_11
 {
     public partial class FrmModificaArticulo : Form
     {
         private Articulo articulo = null;
+        public delegate void UpdateArticuloList();
+        public UpdateArticuloList updateArticuloList;
         public FrmModificaArticulo()
         {
             InitializeComponent();
+            updateArticuloList += FrmMain.UpdateArticuloList;
         }
 
         public FrmModificaArticulo(Articulo articulo)
         {
             InitializeComponent();
+            updateArticuloList += FrmMain.UpdateArticuloList;
             this.articulo = articulo;
         }
 
@@ -34,6 +39,7 @@ namespace TPWinforms_equipo_11
         private void btnModificar_Click(object sender, EventArgs e)
         {
             Articulo nuevo = new Articulo();
+
             ArticuloBusiness articuloBusiness = new ArticuloBusiness();
 
             try
@@ -52,7 +58,7 @@ namespace TPWinforms_equipo_11
                 };
                 nuevo.Imagen = new List<Imagen> { nuevaImagen };
 
-                articuloBusiness.Modificar(nuevo);
+                articuloBusiness.Modificar(articulo, nuevo);
 
                 MessageBox.Show("Modificdo Exitosamente");
                 this.Close();
@@ -111,6 +117,9 @@ namespace TPWinforms_equipo_11
             }
         }
 
-
+        private void FrmModificaArticulo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            updateArticuloList.Invoke();
+        }
     }
 }

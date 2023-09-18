@@ -3,14 +3,19 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using Business;
 using Domain;
+using static TPWinforms_equipo_11.FrmModificaArticulo;
+using TPWinforms;
 
 namespace TPWinforms_equipo_11
 {
     public partial class FrmAltaArticulo : Form
     {
+        public delegate void UpdateArticuloList();
+        public UpdateArticuloList updateArticuloList;
         public FrmAltaArticulo()
         {
             InitializeComponent();
+            updateArticuloList += FrmMain.UpdateArticuloList;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -84,6 +89,11 @@ namespace TPWinforms_equipo_11
             {
                 pbxArticulo.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
             }
+        }
+
+        private void FrmAltaArticulo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            updateArticuloList.Invoke();
         }
     }
 }

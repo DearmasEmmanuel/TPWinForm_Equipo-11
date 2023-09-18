@@ -217,6 +217,7 @@
             this.Name = "FrmAltaArticulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAltaArticulo";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmAltaArticulo_FormClosing);
             this.Load += new System.EventHandler(this.FrmAltaArticulo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).EndInit();
             this.ResumeLayout(false);

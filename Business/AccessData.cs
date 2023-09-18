@@ -20,10 +20,10 @@ namespace Data
         }
         public AccessData()
         {
-            //if(Environment.MachineName == "DESKTOP-J2J0GK7")
-            //{
-            //    connectionString = "Server=.;Database=CATALOGO_P3_DB;Trusted_Connection=True;";
-            //}
+            if (Environment.MachineName == "DESKTOP-J2J0GK7")
+            {
+                connectionString = "Server=.;Database=CATALOGO_P3_DB;Trusted_Connection=True;";
+            }
             this.connection = new SqlConnection(connectionString);
             this.command = new SqlCommand();
         }

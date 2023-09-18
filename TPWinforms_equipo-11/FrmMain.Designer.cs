@@ -60,6 +60,7 @@
             // 
             this.dgvArticulo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvArticulo.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvArticulo.EnableHeadersVisualStyles = false;
             this.dgvArticulo.Location = new System.Drawing.Point(36, 127);
             this.dgvArticulo.MultiSelect = false;
             this.dgvArticulo.Name = "dgvArticulo";
@@ -114,6 +115,7 @@
             this.txtCode.Name = "txtCode";
             this.txtCode.Size = new System.Drawing.Size(92, 20);
             this.txtCode.TabIndex = 16;
+            this.txtCode.TextChanged += new System.EventHandler(this.FilterEvent);
             // 
             // lblCode
             // 
@@ -142,6 +144,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(145, 20);
             this.txtNombre.TabIndex = 19;
+            this.txtNombre.TextChanged += new System.EventHandler(this.FilterEvent);
             // 
             // lblCategory
             // 
@@ -161,6 +164,7 @@
             this.cbCategory.Name = "cbCategory";
             this.cbCategory.Size = new System.Drawing.Size(121, 21);
             this.cbCategory.TabIndex = 21;
+            this.cbCategory.TextChanged += new System.EventHandler(this.FilterEvent);
             // 
             // lblBrand
             // 
@@ -179,6 +183,7 @@
             this.cbBrand.Name = "cbBrand";
             this.cbBrand.Size = new System.Drawing.Size(121, 21);
             this.cbBrand.TabIndex = 23;
+            this.cbBrand.TextChanged += new System.EventHandler(this.FilterEvent);
             // 
             // lblDescription
             // 
@@ -197,6 +202,7 @@
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(270, 20);
             this.txtDescription.TabIndex = 25;
+            this.txtDescription.TextChanged += new System.EventHandler(this.FilterEvent);
             // 
             // lblPrice
             // 
@@ -237,7 +243,7 @@
             this.numPriceMin.Size = new System.Drawing.Size(90, 20);
             this.numPriceMin.TabIndex = 28;
             this.numPriceMin.ThousandsSeparator = true;
-            this.numPriceMin.ValueChanged += new System.EventHandler(this.numPriceMin_ValueChanged);
+            this.numPriceMin.ValueChanged += new System.EventHandler(this.FilterEvent);
             // 
             // lblMax
             // 
@@ -261,6 +267,7 @@
             this.numPriceMax.Name = "numPriceMax";
             this.numPriceMax.Size = new System.Drawing.Size(90, 20);
             this.numPriceMax.TabIndex = 30;
+            this.numPriceMax.ValueChanged += new System.EventHandler(this.FilterEvent);
             // 
             // buttonCategoryWindow
             // 
@@ -313,6 +320,7 @@
             this.Controls.Add(this.dgvArticulo);
             this.Name = "FrmMain";
             this.Text = "Gestión de Artículos";
+            this.Activated += new System.EventHandler(this.TPWinforms_Activated);
             this.Load += new System.EventHandler(this.TPWinforms_Catalogo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).EndInit();

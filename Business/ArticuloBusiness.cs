@@ -17,10 +17,7 @@ namespace Business
 {
     public class ArticuloBusiness
     {
-
-        private string connectionString = "Server=.\\SQLEXPRESS;Database=CATALOGO_P3_DB;Integrated Security=true";
-
-        public List<Articulo> Listar()
+        public List<Articulo> List()
         {
             List<Articulo> lista = new List<Articulo>();
             AccessData data = new AccessData();
@@ -133,91 +130,149 @@ namespace Business
                 data.Close();
             }
         }
-
-        public void Modificar(Articulo articulo)
+        public int Modificar(Articulo oldItem, Articulo updatedItem)
         {
             AccessData data = new AccessData();
             List<SqlParameter> parameters = new List<SqlParameter>();
             try
             {
-                string query = @"
-            UPDATE ARTICULOS 
-            SET Codigo = @Codigo, 
-                Nombre = @Nombre, 
-                Descripcion = @Descripcion, 
-                Precio = @Precio, 
-                IdMarca = @IdMarca, 
-                IdCategoria = @IdCategoria
-            WHERE Id = @Id";
+                string query = "UPDATE ARTICULOS SET";
+                parameters.Add(new SqlParameter("@Id", oldItem.Id));
+                if (oldItem.Nombre != updatedItem.Nombre)
+                {
+                    query += " Nombre = @Name,";
+                    parameters.Add(new SqlParameter("@Name", updatedItem.Nombre));
+                }
+                if (oldItem.Descripcion != updatedItem.Descripcion)
+                {
+                    query += " Descripcion = @Description,";
+                    parameters.Add(new SqlParameter("@Description", updatedItem.Descripcion));
+                }
+                if (oldItem.Codigo != updatedItem.Codigo)
+                {
+                    query += " Codigo = @Code,";
+                    parameters.Add(new SqlParameter("@Code", updatedItem.Codigo));
+                }
+                if (oldItem.Categoria != updatedItem.Categoria)
+                {
+                    query += " IdCategoria = @Category,";
+                    parameters.Add(new SqlParameter("@Category", updatedItem.Categoria.Id));
+                }
+                if (oldItem.Marca != updatedItem.Marca)
+                {
+                    query += " IdMarca = @Brand,";
+                    parameters.Add(new SqlParameter("@Brand", updatedItem.Marca.Id));
+                }
+                if (oldItem.Precio != updatedItem.Precio)
+                {
+                    query += " Precio = @Price,";
+                    parameters.Add(new SqlParameter("@Price", updatedItem.Precio));
+                }
+                int imageUpdate = ImagenBusiness.UpdateList(oldItem.Imagen, updatedItem.Imagen);
+                Console.WriteLine(imageUpdate);
+                if (query[query.Length - 1] == ',')
+                {
+                    query = query.Remove(query.Length - 1, 1);
+                }
+                else
+                {
+                    return -1;
+                }
 
-                parameters.Add(new SqlParameter("@Codigo", articulo.Codigo));
-                parameters.Add(new SqlParameter("@Nombre", articulo.Nombre));
-                parameters.Add(new SqlParameter("@Descripcion", articulo.Descripcion));
-                parameters.Add(new SqlParameter("@Precio", articulo.Precio));
-                parameters.Add(new SqlParameter("@IdMarca", articulo.Marca.Id));
-                parameters.Add(new SqlParameter("@IdCategoria", articulo.Categoria.Id));
-                parameters.Add(new SqlParameter("@Id", articulo.Id));
+                query += " WHERE Id = @Id";
 
                 data.SetQuery(query, parameters);
 
-                // Actualizar todas las imágenes en la tabla IMAGENES en una sola consulta
-                StringBuilder updateImagenQuery = new StringBuilder();
-                updateImagenQuery.Append("UPDATE IMAGENES SET ImagenUrl = CASE IdArticulo ");
-
-                for (int i = 0; i < articulo.Imagen.Count; i++)
-                {
-                    updateImagenQuery.Append($"WHEN {articulo.Id} THEN @ImagenUrl{i} ");
-                    parameters.Add(new SqlParameter($"@ImagenUrl{i}", articulo.Imagen[i].ImagenUrl));
-                }
-
-                updateImagenQuery.Append("ELSE ImagenUrl END");
-
-                data.SetQuery(updateImagenQuery.ToString(), parameters);
-
-                // Ejecutar la actualización
-                data.ExecuteNonQuery();
+                return data.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
-                throw new Exception("Error al modificar el artículo.", ex);
+                return -1;
+                throw ex;
             }
             finally
             {
                 data.Close();
             }
         }
+        //public void Modificar(Articulo articulo)
+        //{
+        //    AccessData data = new AccessData();
+        //    List<SqlParameter> parameters = new List<SqlParameter>();
+        //    try
+        //    {
+        //        string query = @"
+        //    UPDATE ARTICULOS 
+        //    SET Codigo = @Codigo, 
+        //        Nombre = @Nombre, 
+        //        Descripcion = @Descripcion, 
+        //        Precio = @Precio, 
+        //        IdMarca = @IdMarca, 
+        //        IdCategoria = @IdCategoria
+        //    WHERE Id = @Id";
 
+        //        parameters.Add(new SqlParameter("@Codigo", articulo.Codigo));
+        //        parameters.Add(new SqlParameter("@Nombre", articulo.Nombre));
+        //        parameters.Add(new SqlParameter("@Descripcion", articulo.Descripcion));
+        //        parameters.Add(new SqlParameter("@Precio", articulo.Precio));
+        //        parameters.Add(new SqlParameter("@IdMarca", articulo.Marca.Id));
+        //        parameters.Add(new SqlParameter("@IdCategoria", articulo.Categoria.Id));
+        //        parameters.Add(new SqlParameter("@Id", articulo.Id));
 
+        //        data.SetQuery(query, parameters);
 
+        //        // Actualizar todas las imágenes en la tabla IMAGENES en una sola consulta
+        //        StringBuilder updateImagenQuery = new StringBuilder();
+        //        updateImagenQuery.Append("UPDATE IMAGENES SET ImagenUrl = CASE IdArticulo ");
 
+        //        for (int i = 0; i < articulo.Imagen.Count; i++)
+        //        {
+        //            updateImagenQuery.Append($"WHEN {articulo.Id} THEN @ImagenUrl{i} ");
+        //            parameters.Add(new SqlParameter($"@ImagenUrl{i}", articulo.Imagen[i].ImagenUrl));
+        //        }
 
-        public void eliminar(int id)
+        //        updateImagenQuery.Append("ELSE ImagenUrl END");
+
+        //        data.SetQuery(updateImagenQuery.ToString(), parameters);
+
+        //        // Ejecutar la actualización
+        //        data.ExecuteNonQuery();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw new Exception("Error al modificar el artículo.", ex);
+        //    }
+        //    finally
+        //    {
+        //        data.Close();
+        //    }
+        //}
+        public int Eliminar(Articulo articulo)
         {
-            using(SqlConnection conexion = new SqlConnection(connectionString))
+            AccessData data = new AccessData();
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            try
             {
-                using (SqlCommand comando = new SqlCommand()) 
+                string query = "DELETE FROM ARTICULOS WHERE Id = @Id";
+                parameters.Add(new SqlParameter("@Id", articulo.Id));
+
+                if (articulo.Imagen.Count > 0)
                 {
-                    comando.Connection = conexion;
-                    comando.CommandType = System.Data.CommandType.Text;
-                    comando.CommandText = "DELETE FROM ARTICULOS WHERE Id = @Id";
-
-                    comando.Parameters.AddWithValue("@Id", id);
-
-                    try
-                    {
-                        conexion.Open();
-                        comando.ExecuteNonQuery();
-                        //AccesoDatos datos = new AccesoDatos();
-                        //datos.setearConsulta("delete from pokemons where id = @id");
-                        //datos.setearParametro("@id", id);
-                        //datos.ejecutarAccion();
-                    }
-                    catch (Exception ex)
-                    {
-                        throw new Exception("Error al eliminar el artículo.", ex);
-                    }
+                    query += " DELETE FROM IMAGENES WHERE IdArticulo = @Id";
                 }
-            }          
+
+                data.SetQuery(query, parameters);
+
+                return data.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                data.Close();
+            }
         }
     }
 }
